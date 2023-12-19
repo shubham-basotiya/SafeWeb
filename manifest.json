@@ -1,0 +1,23 @@
+{
+    "manifest_version": 3,
+    "name": "Email Sender Extension",
+    "version": "1.0",
+    "permissions": ["tabs", "storage"],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+      ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
